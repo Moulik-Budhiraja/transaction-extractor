@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  transaction-extractor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: transaction-extractor:0.1.0
+    ports:
+      - "9828:3000"
+    environment:
+      - TZ=${TZ}
+
+    # pull_policy: build
+    restart: always
